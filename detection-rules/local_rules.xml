@@ -1,0 +1,13 @@
+<group name="windows,powershell,">
+
+  <rule id="100100" level="10">
+    <if_sid>91802</if_sid>
+    <field name="win.eventdata.scriptBlockText" type="pcre2">(?i)\b(Invoke-Expression|IEX)\b</field>
+    <options>no_full_log</options>
+    <description>Suspicious PowerShell Invoke-Expression (IEX) usage detected</description>
+    <mitre>
+      <id>T1059.001</id>
+    </mitre>
+  </rule>
+
+</group>
